@@ -32,13 +32,7 @@ This tool automates API performance testing using Apache JMeter and/or Locust, c
 
 ## Architecture
 
-User → Flask API (optional) → Run test (JMeter/Locust)
-                                  ↓
-                              Parse results
-                                  ↓
-                           Push to InfluxDB
-                                  ↓
-                             Grafana Dashboard
+User → Flask API (optional) → Run test (JMeter/Locust) → Parse results → Push to InfluxDB → Grafana Dashboard
 
 ---
 
