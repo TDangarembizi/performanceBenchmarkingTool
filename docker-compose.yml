@@ -30,15 +30,15 @@ services:
     restart: unless-stopped
 
     jmeter:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: jmeter
-    volumes:
-      - ./jmeter/test-plans:/test-plans
-      - ./results:/results
-    depends_on:
-      - influxdb
-    environment:
-      - TEST_PLAN=/test-plans/basic_test.jmx
-      - RESULTS_FILE=/results/results.csv
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: jmeter
+      volumes:
+        - ./jmeter/test-plans:/test-plans
+        - ./results:/results
+      depends_on:
+        - influxdb
+      environment:
+        - TEST_PLAN=/test-plans/basic_test.jmx
+        - RESULTS_FILE=/results/results.csv
